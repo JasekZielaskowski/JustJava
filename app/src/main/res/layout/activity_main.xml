@@ -8,11 +8,13 @@
     android:paddingRight="16dp">
 
     <TextView
-        android:id="@+id/quantity_text_view"
+        android:id="@+id/quantity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantity"
-        android:textAllCaps="true"/>
+        android:textAllCaps="true" />
+
+
 
 
     <TextView
@@ -23,6 +25,35 @@
         android:textColor="#000000"
         android:layout_marginBottom="16dp"
         >/</TextView>
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textAllCaps="true"/>
+
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0"
+        android:textSize="16dp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp"
+        >/</TextView>
+
+
+
+
 
 
     <Button
