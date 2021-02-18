@@ -27,6 +27,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
+
+    /**
+     * This method is called when the increment button is clicked
+     */
+    public void increment(View view) {
+        int quantity = 3;
+        display(quantity);
+    }
+
+    /**
+     * This method is called when the decrement button is clicked
+     */
+    public void decrement(View view) {
+        int quantity = 1;
+        display(quantity);
+    }
+
     /**
      * This method is called when the order button is clicked.
      */
