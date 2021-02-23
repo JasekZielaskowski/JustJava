@@ -34,9 +34,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         int quantity = 2;
-        quantity = 3;
-        quantity = 4;
-        quantity = 5;
+        //quantity = quantity + 1;  ***this is one way to do it***
+        quantity++;  //This is a simpler way to do it
         display(quantity);
     }
 
