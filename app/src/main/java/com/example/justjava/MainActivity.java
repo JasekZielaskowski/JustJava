@@ -21,7 +21,6 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-
     /**
      *This is where we will initiate our global variables
      */
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberOfCoffees = 6;
+        int numberOfCoffees = quantity;
         display(numberOfCoffees);
         displayPrice(numberOfCoffees * 5);
     }
