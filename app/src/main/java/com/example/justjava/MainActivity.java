@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String message = "She said\"1 dollar\"";
-        displayMessage(message);
+        String priceMessage = "$" +100;
+        displayMessage(priceMessage);
     }
 
     /**
