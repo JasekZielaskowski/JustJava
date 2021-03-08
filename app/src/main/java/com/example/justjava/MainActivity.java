@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         int price = quantity * 5;
         String priceMessage = "Price $" + (quantity * 5);
-        priceMessage = priceMessage + "\n\nYour order will be right up!";
+        priceMessage = priceMessage + "\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
     }
 
