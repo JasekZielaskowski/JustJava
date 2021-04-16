@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         //quantity = quantity + 1;  ***this is one way to do it***
         quantity++;  //This is a simpler way to do it
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         //quantity = quantity - 1;  ***this is one way to do it***
         if(quantity>0) {
             quantity--;  //This is a simpler way to do it
-            display(quantity);
+            displayQuantity(quantity);
         }
     }
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
     }
