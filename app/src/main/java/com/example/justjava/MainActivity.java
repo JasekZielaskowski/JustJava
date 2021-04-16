@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createWeaherMessage(int temperature, String citName) {
-        return "Welcome to" + cityName "where the temperature is" + temperature + "F";
+        return "Welcome to San Francisco where the temperature is" + temperature + "F";
     }
 
 
@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = "Price $" + (quantity * 5);
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
+    }
+    private void calculatePrice(int quantity) {
+        int price = quantity * 5;
     }
 
     /**
