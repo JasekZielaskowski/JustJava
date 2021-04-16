@@ -70,9 +70,15 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = "Price $" + (quantity * 5);
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
+
+        calculatePrice(quantity, 10);
     }
-    private void calculatePrice(int quantity) {
-        int price = quantity * 5;
+    /**
+    *@param  quantity is the number of cups of coffee ordered
+    * @[param pricePerCup tell us the price per cup of coffee
+    */
+    private void calculatePrice(int quantity, int pricePerCup) {
+        int price = quantity * pricePerCup;
     }
 
     /**
