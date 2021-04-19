@@ -66,18 +66,20 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = quantity * 5;
-        String priceMessage = "Price $" + (quantity * 5);
+        int price = calculatePrice();
+        String priceMessage = "Thank you for ordering." + "\nPrice $" + (quantity * 5);
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
 
         calculatePrice();
     }
     /**
-     * Calculate te price of the order
+     * Calculates price of the order
+     * @return total price
     */
-    private void calculatePrice() {
+    private int calculatePrice() {
         int price = quantity * 5;
+        return price;
     }
 
     /**
