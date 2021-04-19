@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createWeaherMessage(77, "San Francisco");
+        createWeatherMessage(77, "San Francisco");
     }
 
-    private String createWeaherMessage(int temperature, String citName) {
+    private String createWeatherMessage(int temperature, String citName) {
         return "Welcome to San Francisco where the temperature is" + temperature + "F";
     }
 
