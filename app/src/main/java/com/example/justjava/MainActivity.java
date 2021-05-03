@@ -12,7 +12,10 @@ package com.example.justjava;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -66,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
+        Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
+
+
         int price = calculatePrice();
         String priceMessage = "Thank you for ordering." + "\nPrice $" + (quantity * 5);
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
