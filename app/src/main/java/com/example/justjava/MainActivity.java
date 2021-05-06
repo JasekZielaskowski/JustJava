@@ -17,7 +17,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import java.text.NumberFormat;
 
 /**
  * This app displays an order form to order coffee.
@@ -72,15 +71,34 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
         Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
-
-
         int price = calculatePrice();
+        int display = price;
+        displayMessage(createOrderSummary(display));
+
+
+
+
+
+    }
+
+
+
+
+    private <string> String createOrderSummary(int price) {
+        /**
+         * @param price
+         * @return priceMessage
+         */
+
+
         String priceMessage = "Thank you for ordering." + "\nPrice $" + (quantity * 5);
         priceMessage = priceMessage + "\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
+        return priceMessage;
 
-        calculatePrice();
     }
+
+
     /**
      * Calculates price of the order
      * @return total price
