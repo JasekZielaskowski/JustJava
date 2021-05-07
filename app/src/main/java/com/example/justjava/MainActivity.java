@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
         boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
         Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
         int price = calculatePrice();
-        int display = price;
-        displayMessage(createOrderSummary(display);
+        String priceMessage = createOrderSummary(price, hashWhippedCream);
+        displayMessage(priceMessage);
 
 
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
     private <string> String createOrderSummary(int price, boolean addWhippedCream) {
         String priceMessage = "Thank you for ordering." + "\nPrice $" + (quantity * 5);
-        priceMessage += "Add Whipped Cream?" + addWhippedCream;
+        priceMessage += "\nAdd Whipped Cream?" + addWhippedCream;
         priceMessage +="\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
         return priceMessage;
