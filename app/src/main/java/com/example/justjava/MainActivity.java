@@ -68,11 +68,18 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        // Figure out if customer wants whipped cream
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
         Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
+
+        // Figure out if customer wants chocolate
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean hasChocolate =chocolateCheckBox.isChecked();
+
         int price = calculatePrice();
-        String priceMessage = createOrderSummary(price, hashWhippedCream);
+
+        String priceMessage = createOrderSummary(price, hashWhippedCream,hasChocolate);
         displayMessage(priceMessage);
 
 
@@ -87,9 +94,10 @@ public class MainActivity extends AppCompatActivity {
      * @return priceMessage
      */
 
-    private <string> String createOrderSummary(int price, boolean addWhippedCream) {
+    private <string> String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = "Thank you for ordering" + quantity + "Coffees!";
         priceMessage += "\nAdd Whipped Cream?\n" + addWhippedCream;
+        priceMessage += "\nAdd Chocolate" + addChocolate;
         priceMessage += "\nAmount Due $" + price;
         priceMessage +="\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
