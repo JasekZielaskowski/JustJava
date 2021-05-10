@@ -88,8 +88,9 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private <string> String createOrderSummary(int price, boolean addWhippedCream) {
-        String priceMessage = "Thank you for ordering." + "\nPrice $" + (quantity * 5);
-        priceMessage += "\nAdd Whipped Cream?" + addWhippedCream;
+        String priceMessage = "Thank you for ordering" + quantity + "Coffees!";
+        priceMessage += "\nAdd Whipped Cream?\n" + addWhippedCream;
+        priceMessage += "\nAmount Due $" + price;
         priceMessage +="\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
         return priceMessage;
