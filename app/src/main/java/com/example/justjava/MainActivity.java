@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -68,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        EditText nameField = (EditText) findViewById(R.id.user_input_name_view);
+        String name = nameField.getText().toString();
+        Log.v("MainActivity", "Name:" + name);
+
         // Figure out if customer wants whipped cream
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
@@ -96,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
 
     private <string> String createOrderSummary(int price, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = "Name: Jasek Z";
-        priceMessage += "\nThank you for ordering" + quantity + "Coffees!";
+        priceMessage += "\nThank you for ordering\n" + quantity + "\nCoffees!";
         priceMessage += "\nAdd Whipped Cream?\n" + addWhippedCream;
-        priceMessage += "\nAdd Chocolate" + addChocolate;
+        priceMessage += "\nAdd Chocolate?\n" + addChocolate;
         priceMessage += "\nAmount Due $" + price;
         priceMessage +="\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
