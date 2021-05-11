@@ -20,6 +20,14 @@
             android:text="Toppings"
             android:textAllCaps="true" />
 
+        <EditText
+            android:id="@+id/user_input_name_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="text" />
+
+
 
         <CheckBox
             android:id="@+id/whipped_cream_checkbox"
