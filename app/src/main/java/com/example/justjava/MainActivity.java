@@ -9,7 +9,8 @@
 package com.example.justjava;
 
 
-
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -71,38 +72,33 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-//        EditText nameField = (EditText) findViewById(R.id.user_input_name_view);
-//        String name = nameField.getText().toString();
-//        Log.v("MainActivity", "Name:" + name);
+       EditText nameField = (EditText) findViewById(R.id.user_input_name_view);
+        String name = nameField.getText().toString();
+        Log.v("MainActivity", "Name:" + name);
 
         // Figure out if customer wants whipped cream
-//        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
-//        boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
-//        Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
+        Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
 
         // Figure out if customer wants chocolate
-//        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
-//        boolean hasChocolate =chocolateCheckBox.isChecked();
-//        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        boolean hasChocolate =chocolateCheckBox.isChecked();
+        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
 
-//        int price = calculatePrice();
+        int price = calculatePrice(hashWhippedCream, hasChocolate);
 
-//        String priceMessage = createOrderSummary(name, price, hashWhippedCream, hasChocolate);
-//        displayMessage(priceMessage);
+        String priceMessage = createOrderSummary(name, price, hashWhippedCream, hasChocolate);
+        displayMessage(priceMessage);
 
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(geoLocation);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for "+ name);
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
-
-
-        
     }
-
-
-
-
     /**
      * @param name of the customer
      * @param price
@@ -110,20 +106,16 @@ public class MainActivity extends AppCompatActivity {
      * @param addChocolate is whether or not the user wants chocolate
      * @return priceMessage
      */
-
     private <string> String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = "Name: " + name;
-        priceMessage += "\nThank you for ordering\n" + quantity + "\nCoffees!";
-        priceMessage += "\nAdd Whipped Cream?\n" + addWhippedCream;
-        priceMessage += "\nAdd Chocolate?\n" + addChocolate;
+        priceMessage += "\nThank you for ordering " + quantity + "\nCoffees!";
+        priceMessage += "\nAdd Whipped Cream? " + addWhippedCream;
+        priceMessage += "\nAdd Chocolate? " + addChocolate;
         priceMessage += "\nAmount Due $" + price;
         priceMessage +="\n\nYour order will be right up!"; //I used the escape key \n to put the text on a new line
         displayMessage(priceMessage);
         return priceMessage;
-
     }
-
-
     /**
      * Calculates price of the order
      * @param addWhippedCream
@@ -131,16 +123,15 @@ public class MainActivity extends AppCompatActivity {
      * @return total price
     */
     private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
-        int basePrice =5;
-
+        int basePrice = 5;
         if (addWhippedCream) {
             basePrice = basePrice + 1;
         }
         if (addChocolate) {
             basePrice = basePrice + 2;
         }
-            return quantity * basePrice;
-
+        return quantity * basePrice;
+    }
 
     /**
      * This method displays the given quantity value on the screen.
