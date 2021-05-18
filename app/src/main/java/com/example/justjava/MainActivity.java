@@ -66,34 +66,40 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        EditText nameField = (EditText) findViewById(R.id.user_input_name_view);
-        String name = nameField.getText().toString();
-        Log.v("MainActivity", "Name:" + name);
+//        EditText nameField = (EditText) findViewById(R.id.user_input_name_view);
+//        String name = nameField.getText().toString();
+//        Log.v("MainActivity", "Name:" + name);
 
         // Figure out if customer wants whipped cream
-        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
-        boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
-        Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
+//        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+//        boolean hashWhippedCream =whippedCreamCheckBox.isChecked();
+//        Log.v("MainActivity", "Has whipped cream: " + hashWhippedCream);
 
         // Figure out if customer wants chocolate
-        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
-        boolean hasChocolate =chocolateCheckBox.isChecked();
-        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
+//        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+//        boolean hasChocolate =chocolateCheckBox.isChecked();
+//        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
 
-        int price = calculatePrice();
+//        int price = calculatePrice();
 
-        String priceMessage = createOrderSummary(name, price, hashWhippedCream, hasChocolate);
-        displayMessage(priceMessage);
+//        String priceMessage = createOrderSummary(name, price, hashWhippedCream, hasChocolate);
+//        displayMessage(priceMessage);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(geoLocation);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
 
 
-
-
-
+        
     }
+
 
 
 
