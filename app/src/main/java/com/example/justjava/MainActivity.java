@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
      *This is where we will initiate our global variables
      */
     int quantity = 0;
+    private int basePrice;
 
 
     @Override
@@ -94,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     /**
      * @param name of the customer
      * @param price
@@ -117,12 +120,21 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Calculates price of the order
+     * @param addWhippedCream
+     * @param addChocolate
      * @return total price
     */
-    private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
-    }
+    private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
+        int basePrice =5;
+
+        if (addWhippedCream) {
+            basePrice = basePrice + 1;
+        }
+        if (addChocolate) {
+            basePrice = basePrice + 2;
+        }
+            return quantity * basePrice;
+
 
     /**
      * This method displays the given quantity value on the screen.
