@@ -1,11 +1,3 @@
-/**
- * IMPORTANT: Make sure you are using the correct package name.
- * This example uses the package name:
- * package com.example.android.justjava
- * If you get an error when copying this code into Android studio, update it to match teh package name found
- * in the project's AndroidManifest.xml file.
- **/
-
 package com.example.justjava;
 
 
@@ -38,12 +30,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createWeatherMessage(77, "San Francisco");
-    }
 
-    private String createWeatherMessage(int temperature, String citName) {
-        return "Welcome to San Francisco where the temperature is" + temperature + "F";
-    }
+
+        TextView coffeeAccessories = (TextView) findViewById(R.id.coffeeExtras);
+
+        coffeeAccessories.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+
+            }
+
+            public void OnClick(View v) {
+                Intent coffeeAccessoriesPage = new Intent();
+                startActivity(coffeeAccessoriesPage);
+            }
+
+
+
+            public void nowHiring(View view) {
+
+            }
+
 
 
 
@@ -148,14 +156,3 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
         priceTextView.setText(message);
     }
-
-    TextView coffeeExtrasTextView = (TextView) findViewById(R.id.coffeeExtras);
-    TextView.setOnClickListener(new View.OnClickListener) {
-        @Override
-                public void onClick(View v) {
-            Intent CoffeeExtraIntent = new Intent(MainActivity,this, coffeeExtrasTextView.class)
-            startActivity(coffeeExtrasTextView);
-        }
-    }
-
-}

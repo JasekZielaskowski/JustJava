@@ -109,15 +109,20 @@
             android:text="Order" />
 
 
-        <TextView
+        <Button
             android:id="@+id/coffeeExtras"
-            android:layout_width="150dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="15dp"
-            android:gravity="center_horizontal"
             android:text="Extras"
             android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/nowHiring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now Hiring"
+            android:onClick="nowHiring"/>
 
 
 
