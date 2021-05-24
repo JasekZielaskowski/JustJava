@@ -149,5 +149,13 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(message);
     }
 
+    TextView coffeeExtrasTextView = (TextView) findViewById(R.id.coffeeExtras);
+    TextView.setOnClickListener(new View.OnClickListener) {
+        @Override
+                public void onClick(View v) {
+            Intent CoffeeExtraIntent = new Intent(MainActivity,this, coffeeExtrasTextView.class)
+            startActivity(coffeeExtrasTextView);
+        }
+    }
 
 }
