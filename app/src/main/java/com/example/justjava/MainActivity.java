@@ -25,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private int basePrice;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState, Object view) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -48,9 +47,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            public void nowHiring(View view) {
 
             }
+
+
+            /**
+             * This will open the now hiring page when the button in
+             * @param view
+             */
+            public void nowHiring(View view) {
+            Intent i= new Intent(PackageContext: this, NowHiring.class);
+            }
+        }
 
 
 

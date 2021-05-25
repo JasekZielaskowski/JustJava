@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.justjava">
 
     <application
@@ -19,7 +20,8 @@
         </activity>
         <activity
             android:name=".coffeeAcessoriesPage"
-            android:label="Coffee Accessories"></activity>
+            android:label="Coffee Accessories"
+            tools:ignore="Instantiatable"></activity>
     </application>
 
 </manifest>
